@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Сайт для подготовке к ЕГЭ по физике</title>
+  <style>
+    /* CSS стили для внешнего вида сайта */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      max-width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .login-form {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .login-form input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-form .btn-student {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-form .btn-student:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Задания по физике для подготовки к ЕГЭ</h1>
+
+    <div class="login-form">
+      <form id="loginForm" onsubmit="return login()">
+        <input type="text" id="username" placeholder="Логин" required><br>
+        <input type="password" id="password" placeholder="Пароль" required><br>
+        <input type="submit" value="Войти">
+        <input type="button" value="Я ученик" class="btn-student" onclick="redirectToStudentPage()">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "T.Krauyhina" && password === "001955754TKra") {
+        window.location.href = "uchitelskaya.html";
+        return false;
+      } else {
+        alert("Неверный логин или пароль!");
+        return false;
+      }
+    }
+
+    function redirectToStudentPage() {
+      window.location.href = "student.html";
+    }
+  </script>
+
+</body>
+</html>
